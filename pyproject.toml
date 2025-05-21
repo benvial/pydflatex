@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "pydflatex"
+description = "LaTeX wrapper"
+version = "0.0.1"
+authors = [
+    {name = "Olivier Verdier"},
+    {name = "Benjamin Vial"},
+]
+readme = "README.md"
+license = { file = "LICENSE.md" }
+keywords = ["LaTeX", "pdflatex", "parser"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU General Public License (GPL)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Topic :: Text Processing :: Markup :: LaTeX",
+]
+requires-python = ">=3.7"
+
+[tool.setuptools]
+packages = ["pydflatex"]
+zip-safe = false
+script-files = ["bin/pydflatex"]
+
+
+[project.optional-dependencies]
+test = [
+  "pytest",
+]
+color = [
+  "blessings",
+]
+all = ["pydflatex[test,color]"]
+
+[project.urls]
+homepage = "https://github.com/olivierverdier/pydflatex"
+code = "https://github.com/olivierverdier/pydflatex"
+issues = "https://github.com/olivierverdier/pydflatex/issues"
